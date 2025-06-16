@@ -1,0 +1,41 @@
+{%extends 'PokeApp/base.html'%}
+
+{%block content%}
+
+{% load static%}
+<link rel="stylesheet" href="{% static 'PokeSearch/pokesearch.css' %}">
+
+
+
+<h1 class="center">Search Pokémon</h1>
+
+<div class="container">
+
+<form action="" method="POST">
+    {% csrf_token %}
+<div class="form-control">
+    <input class="full-width-input" id="Inputvalue" name="Inputvalue" type="text" placeholder="Pokémon Name"></div>
+</div>
+
+<div class="center">
+    <button class="btn btn mt-3 btn-primary" onclick="add(event);">Search</button>
+</div>
+</form>
+
+<script>        
+    function add(event) {
+      let input = document.getElementById("Inputvalue").value;
+      if (input.trim() === "") {
+        Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: 'Something went wrong!',
+    footer: 'Please enter a valid Pokémon!'
+  });
+        event.preventDefault();
+      }
+    };
+  </script>
+
+</div>
+{%endblock%}

@@ -1,0 +1,21 @@
+body {
+    background-color: blue;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-top: 2%;
+    margin: auto;
+}
+
+h1{
+    color: rgb(255, 255, 0);
+    padding-bottom: 3%;
+}
+
+
+h2{
+    color: yellow;
+}
+
+.center{
+    text-align: center;
+}

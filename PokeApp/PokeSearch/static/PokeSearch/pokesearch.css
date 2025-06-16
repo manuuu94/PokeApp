@@ -1,0 +1,20 @@
+.container {
+  width: 100%;             /* stretches to full screen */
+  max-width: 600px;        /* optional: limit max size */
+  padding: 1rem;
+}
+
+.form-control {
+  width: 100%;             /* important: allows input to stretch */
+}
+
+.full-width-input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.button-center{
+  text-align: center;
+}
+
+
