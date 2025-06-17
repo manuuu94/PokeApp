@@ -8,10 +8,8 @@ def PokeSearch(request):
         if request.method == "POST":
             value = request.POST.get("Inputvalue")
             print(f"The Pokémon to search is: {value}")
-
-
-            SearchPokemon(value)
-
+            dict["Pokemon"]=SearchPokemon(value)
+            print(dict["Pokemon"])
         return render(request,'PokeSearch/pokesearch.html', context=dict)
 
     except Exception as e:
@@ -20,6 +18,7 @@ def PokeSearch(request):
 
 def SearchPokemon(value):
     try:
+        dict = {}
         apiurl = f"https://pokeapi.co/api/v2/pokemon/{value}"
         response = requests.get(apiurl)
         if response.status_code == 200:
@@ -33,6 +32,10 @@ def SearchPokemon(value):
             spdefense = data["stats"][4]["base_stat"]
             speed = data["stats"][5]["base_stat"]
             print(f"name: {name}, order: {order}, HP: {hp}, Attack: {atk}, Sp.Atk: {spatk}, Defense: {defense}, Sp.Def: {spdefense}, Speed: {speed}")
+            dict = {"Name":name,"Order":order,"HP":hp,
+                    "Attack":atk,"Sp.Attack":spatk,"Defense":defense,
+                    "Sp.Defense":spdefense,"Speed":speed}
+            return dict
         elif response.status_code == 404: 
             print("Not found.")
         else:

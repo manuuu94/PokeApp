@@ -17,4 +17,20 @@
   text-align: center;
 }
 
+.container-table {
+  margin: 0 auto;
+  width: 100%;             /* stretches to full screen */
+  max-width: 600px;        /* optional: limit max size */
+  padding: 1rem;
+  border: 5px;
+  align-items: center;
+}
 
+
+.center-table{
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  color: yellow;
+  border: yellowgreen solid;
+}

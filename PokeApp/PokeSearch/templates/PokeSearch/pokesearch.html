@@ -6,8 +6,9 @@
 <link rel="stylesheet" href="{% static 'PokeSearch/pokesearch.css' %}">
 
 
-
-<h1 class="center">Search Pokémon</h1>
+<div class="form-control">
+<h2 class="center">Search Pokémon</h1>
+</div>
 
 <div class="container">
 
@@ -22,20 +23,42 @@
 </div>
 </form>
 
-<script>        
-    function add(event) {
-      let input = document.getElementById("Inputvalue").value;
-      if (input.trim() === "") {
-        Swal.fire({
-    icon: 'error',
-    title: 'Oops...',
-    text: 'Something went wrong!',
-    footer: 'Please enter a valid Pokémon!'
-  });
-        event.preventDefault();
-      }
-    };
-  </script>
 
 </div>
+
+{%if Pokemon%}
+<div class="container-table" >
+  <table class="table table-hover center-table">
+    {%for key,value in Pokemon.items%}
+    <thead>
+      <th>
+        {{key}}
+      </th>
+    </thead>
+    <tbody>
+      <td>
+        {{value}}
+      </td>
+    </tbody>
+    {%endfor%}
+  </table>
+
+</div>
+{%endif%}
+
+<script>        
+  function add(event) {
+    let input = document.getElementById("Inputvalue").value;
+    if (input.trim() === "") {
+      Swal.fire({
+  icon: 'error',
+  title: 'Oops...',
+  text: 'Something went wrong!',
+  footer: 'Please enter a valid Pokémon!'
+});
+      event.preventDefault();
+    }
+  };
+</script>
+
 {%endblock%}
