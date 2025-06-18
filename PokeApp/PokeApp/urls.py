@@ -21,5 +21,5 @@ from .views import PokeApp
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',PokeApp,name="PokeApp"),
-    path('poke-search/',include('PokeSearch.urls'))
+    path('poke/',include('PokeSearch.urls'))
 ]
