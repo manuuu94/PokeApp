@@ -12,27 +12,14 @@
     <hr>
 <table class="table table-hover center-table">
 <thead>
-    <th>
-    Order    
-    </th>
-    <th>
-    Name
-    </th>
-    <th>
-    Attack
-    </th>
-    <th>
-    Sp.Attack
-    </th>
-    <th>
-    Defense
-    </th>
-    <th>
-    Sp.Defense
-    </th>
-    <th>
-    Speed
-    </th>
+    <th>Order</th>
+    <th>Name</th>
+    <th>HP</th>
+    <th>Attack</th>
+    <th>Sp.Attack</th>
+    <th>Defense</th>
+    <th>Sp.Defense</th>
+    <th>Speed</th>
 </thead>
 {%for key,values in Pokemons.items%}
 <tbody>
@@ -41,6 +28,9 @@
     </td>
     <td>
     {{values.Name}}
+    </td>
+    <td>
+    {{values.HP}}    
     </td>
     <td>
     {{values.Attack}}

@@ -26,7 +26,6 @@ def PokeView(request):
     try:
         dict = {}
         dict["Pokemons"] = GetSavedPokemon()
-        print(dict["Pokemons"])
         return render(request,'PokeSearch/pokeview.html',context=dict)
     except Exception as e:
         print(e)
